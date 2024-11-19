@@ -1,0 +1,19 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Astro">
+	<p class="currentTime"></p>
+	<p>Childreen...</p>
+
+	<script>
+		const currentYear: number = new Date().getFullYear();
+		const currentTime: string = new Date().toLocaleTimeString();
+
+		const textYear = document.querySelector('p') as HTMLElement;
+		textYear.innerText = `©${currentYear}`;
+
+		const timeText = document.querySelector('.currentTime') as HTMLParagraphElement;
+		timeText.innerHTML = currentTime;
+	</script>
+</MainLayout>
